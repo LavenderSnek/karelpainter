@@ -15,3 +15,7 @@ python3 karelpainter.py <image path>
 ## Background
 
 Written for [CodeHS AP CSP Python](https://codehs.com/course/apcsp_py/lessons), Lesson 2.1 "Practice PT: Pair-Programming Paint".
+
+The assignment was to use the CodeHS version of [Karel](https://en.wikipedia.org/wiki/Karel_(programming_language)) and make "pixel art" by individually specifying each move and color.
+
+![Screenshot of final result on CodeHS](images/final-result.png)
