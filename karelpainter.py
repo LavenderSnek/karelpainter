@@ -1,7 +1,7 @@
 from PIL import Image
 import sys
 
-# Usage: /usr/local/bin/python3 karelpainter.py [imgPath] | pbcopy
+# Usage: python3 karelpainter.py [imgPath] | pbcopy
 
 # functions used in this program
 BASE_CODE = """
@@ -36,6 +36,7 @@ turn_right()
 # https://stackoverflow.com/questions/138250/
 # https://stackoverflow.com/questions/19914509/
 
+
 def paintgen(r, g, b):
     hexed = '#{:02x}{:02x}{:02x}'.format(r, g, b)
     return f"pmov('{hexed}')\n"
@@ -54,15 +55,15 @@ def generate_karel_for_img(imgPath: str) -> str:
         for x in range(width):
             c = px[x, y]
             gencode += paintgen(c[0], c[1], c[2])
-
         gencode += "reset()\n"
-    
+
     return gencode
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Incorrect number of arguments!\nexiting...")
         exit()
-    
+
     g = generate_karel_for_img(sys.argv[1])
     print(g)
